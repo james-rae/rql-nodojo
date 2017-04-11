@@ -1,6 +1,6 @@
 This is an implementation of Resource Query Language (RQL) that does not use the DOJO AMD framework.  The implementation primarily focuses on the ability to apply an RQL query string against a JSON array.  
 
-The original project (in AMD form) can be found at [github.com/kriszyp/rql](https://github.com/kriszyp/rql), along with some good documentation. It's some good stuff, check it out. 
+The original project (in AMD form) can be found at [github.com/kriszyp/rql](https://github.com/kriszyp/rql), along with some good documentation. It's some fine stuff, check it out. 
 This [query engine sandbox](http://rql-engine.eu01.aws.af.cm/) is also useful for learning and testing with the original RQL engine.
 
 # Using the Library
@@ -49,36 +49,36 @@ String-based functional queries are what will be used by the RAMP project, and i
 
 A quick lookup for function names. Detailed examples of each can be found in the Examples section below
 
-* eq(&lt;property>,&lt;value>) - equal to
-* ne(&lt;property>,&lt;value>) - not equal to
-* le(&lt;property>,&lt;value>) - less than or equal to
-* ge(&lt;property>,&lt;value>) - greater than or equal to
-* lt(&lt;property>,&lt;value>) - less than
-* gt(&lt;property>,&lt;value>) - greater than
-* match(&lt;property>,&lt;regex>) - regular expression match, case insensitive
-* matchcase(&lt;property>,&lt;regex>) - regular expression match, case sensitive
-* in(&lt;property>,&lt;array-of-values>) - equal to one of a set of values
-* out(&lt;property>,&lt;array-of-values>) - not equal to any of a set of values
-* contains(&lt;property>,&lt;value | expression>) - array contains a value that satisfies an expression
-* excludes(&lt;property>,&lt;value | expression>) - array does not contain a value that satisfies an expression
-* between(&lt;property>,&lt;range-of-values>,...) - value is within a range
-* and(&lt;query>,&lt;query>,...) - logical and
-* or(&lt;query>,&lt;query>,...) - logical or
-* sort(&lt;+|->&lt;property,...) - sorts array on property values
-* select(&lt;property>,&lt;property>,...) - only includes specific properties in the result set
-* unselect(&lt;property>,&lt;property>,...) - exclude specific properties from the result set
-* values(&lt;property>,&lt;property>,...) - returns array of specific property values
-* limit(count,start) - return a range of the array
-* distinct() - return an array of distinct values
-* recurse(&lt;property?>) - copy values from child arrays into top array
-* sum(&lt;property?>) - sum of values of a property
-* mean(&lt;property?>) - mean average of values of a property
-* max(&lt;property?>) - maximum value of a property
-* min(&lt;property?>) - minimum value of a property
-* count() - number of elements in top array
-* first() - first element in top array
-* one() - first and only element in top array
-* aggregate(&lt;property|function>,...) - perform group-by aggregation
+* `eq(&lt;property>,&lt;value>)` - equal to
+* `ne(&lt;property>,&lt;value>)` - not equal to
+* `le(&lt;property>,&lt;value>)` - less than or equal to
+* `ge(&lt;property>,&lt;value>)` - greater than or equal to
+* `lt(&lt;property>,&lt;value>)` - less than
+* `gt(&lt;property>,&lt;value>)` - greater than
+* `match(&lt;property>,&lt;regex>)` - regular expression match, case insensitive
+* `matchcase(&lt;property>,&lt;regex>)` - regular expression match, case sensitive
+* `in(&lt;property>,&lt;array-of-values>)` - equal to one of a set of values
+* `out(&lt;property>,&lt;array-of-values>)` - not equal to any of a set of values
+* `contains(&lt;property>,&lt;value | expression>)` - array contains a value that satisfies an expression
+* `excludes(&lt;property>,&lt;value | expression>)` - array does not contain a value that satisfies an expression
+* `between(&lt;property>,&lt;range-of-values>,...)` - value is within a range
+* `and(&lt;query>,&lt;query>,...)` - logical and
+* `or(&lt;query>,&lt;query>,...)` - logical or
+* `sort(&lt;+|->&lt;property,...)` - sorts array on property values
+* `select(&lt;property>,&lt;property>,...)` - only includes specific properties in the result set
+* `unselect(&lt;property>,&lt;property>,...)` - exclude specific properties from the result set
+* `values(&lt;property>,&lt;property>,...)` - returns array of specific property values
+* `limit(count,start)` - return a range of the array
+* `distinct()` - return an array of distinct values
+* `recurse(&lt;property?>)` - copy values from child arrays into top array
+* `sum(&lt;property?>)` - sum of values of a property
+* `mean(&lt;property?>)` - mean average of values of a property
+* `max(&lt;property?>)` - maximum value of a property
+* `min(&lt;property?>)` - minimum value of a property
+* `count()` - number of elements in top array
+* `first()` - first element in top array
+* `one()` - first and only element in top array
+* `aggregate(&lt;property|function>,...)` - perform group-by aggregation
 
 
 # Examples
@@ -134,7 +134,7 @@ Primitive data types can be specified in the query by putting the type before th
 ### eq
 
 Filters objects where the value of the given property is equal to the given value.  
-**Usage:** eq(&lt;property>,&lt;value>) 
+**Usage:** `eq(&lt;property>,&lt;value>)` 
 	
 	data = [
 		{name: "Danbo", age: 25},
@@ -158,7 +158,7 @@ Alternate forms
 ### ne
 
 Filters objects where the value of the given property is not equal to the given value.  
-**Usage:** ne(&lt;property>,&lt;value>) 
+**Usage:** `ne(&lt;property>,&lt;value>)` 
 	
 	data = [
 		{name: "Danbo", age: 25},
@@ -180,7 +180,7 @@ Alternate forms
 ### le
 
 Filters objects where the value of the given property is less than or equal to the given value.  
-**Usage:** le(&lt;property>,&lt;value>) 
+**Usage:** `le(&lt;property>,&lt;value>)` 
 	
 	data = [
 		{name: "Danbo", age: 25},
@@ -212,7 +212,7 @@ Alternate forms
 ### ge
 
 Filters objects where the value of the given property is greater than or equal to the given value.  
-**Usage:** ge(&lt;property>,&lt;value>) 
+**Usage:** `ge(&lt;property>,&lt;value>)` 
 	
 	data = [
 		{name: "Danbo", age: 25},
@@ -243,7 +243,7 @@ Alternate forms
 ### lt
 
 Filters objects where the value of the given property is less than the given value.  
-**Usage:** lt(&lt;property>,&lt;value>) 
+**Usage:** `lt(&lt;property>,&lt;value>)` 
 	
 	data = [
 		{name: "Danbo", age: 25},
@@ -274,7 +274,7 @@ Alternate forms
 ### gt
 
 Filters objects where the value of the given property is greater than the given value.  
-**Usage:** gt(&lt;property>,&lt;value>) 
+**Usage:** `gt(&lt;property>,&lt;value>)` 
 	
 	data = [
 		{name: "Danbo", age: 25},
@@ -303,7 +303,7 @@ Alternate forms
 ### match
 
 Filters objects where the value of the given property satisfies the given regex pattern, with case insensitivity turned on.  
-**Usage:** match(&lt;property>,&lt;regex>) 
+**Usage:** `match(&lt;property>,&lt;regex>)` 
 
 	data = [
 		{name: "danbo", age: 25},
@@ -328,7 +328,7 @@ Filters objects where the value of the given property satisfies the given regex 
 ### matchcase
 
 Filters objects where the value of the given property satisfies the given regex pattern, with case sensitivity turned on.  
-**Usage:** matchcase(&lt;property>,&lt;regex>) 
+**Usage:** `matchcase(&lt;property>,&lt;regex>)` 
 
 	data = [
 		{name: "danbo", age: 25},
@@ -351,7 +351,7 @@ Filters objects where the value of the given property satisfies the given regex 
 ### in
 
 Filters objects where the value of the given property is equal to one of the values in the given array of values.  
-**Usage:** in(&lt;property>,&lt;array-of-values>)
+**Usage:** `in(&lt;property>,&lt;array-of-values>)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -370,7 +370,7 @@ Filters objects where the value of the given property is equal to one of the val
 ### out
 
 Filters objects where the value of the given property is not equal to any of the values in the given array of values.  
-**Usage:** out(&lt;property>,&lt;array-of-values>)
+**Usage:** `out(&lt;property>,&lt;array-of-values>)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -388,7 +388,7 @@ Filters objects where the value of the given property is not equal to any of the
 ### contains
 
 Filters objects where the value of the given property is an array, and that array has an element that equals the given value or satisfies the given expression.  
-**Usage:** contains(&lt;property>,&lt;value | expression>) 
+**Usage:** `contains(&lt;property>,&lt;value | expression>)` 
 
 	//using value match
 	data = [
@@ -444,7 +444,7 @@ Filters objects where the value of the given property is an array, and that arra
 ### excludes
 
 Filters objects where the value of the given property is an array, and that array has no elements that equal the given value or satisfies the given expression.  
-**Usage:** excludes(&lt;property>,&lt;value | expression>) 
+**Usage:** `excludes(&lt;property>,&lt;value | expression>)` 
 
 	//using value match
 	data = [
@@ -501,7 +501,7 @@ Filters objects where the value of the given property is an array, and that arra
 ### between
 
 Filters objects where the value of the given property is within the given range. The range is inclusive on the lower bound, and exclusive on the upper bound.  
-**Usage:** between(&lt;property>,&lt;range-of-values>,...)
+**Usage:** `between(&lt;property>,&lt;range-of-values>,...)`
 
 
 	data = [
@@ -529,7 +529,7 @@ Filters objects where the value of the given property is within the given range.
 ### and
 
 Performs a logical AND on two or more queries.  
-**Usage:** and(&lt;query>,&lt;query>,...) 
+**Usage:** `and(&lt;query>,&lt;query>,...)` 
 
 	data = [
 		{name: "Danbo", age: 25, salary: 23000, gender: "male"},
@@ -550,7 +550,7 @@ Alternate form
 ### or
 
 Performs a logical OR on two or more queries.  
-**Usage:** or(&lt;query>,&lt;query>,...) 
+**Usage:** `or(&lt;query>,&lt;query>,...)` 
 
 	data = [
 		{name: "Danbo", age: 25, salary: 23000, gender: "male"},
@@ -576,7 +576,7 @@ Alternate form (gets cranky when brackets are introduced to the query string)
 ### sort
 
 Will sort the array based on the given properties. The leading + or - dictates the order of the sort. Cannot currently sort on nested properties.  
-**Usage:** sort(&lt;+|->&lt;property>,...)
+**Usage:** `sort(&lt;+|->&lt;property>,...)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -613,7 +613,7 @@ Will sort the array based on the given properties. The leading + or - dictates t
 ### select
 
 Will return the array objects containing only the given properties.  
-**Usage:** select(&lt;property>,&lt;property>,...) 
+**Usage:** `select(&lt;property>,&lt;property>,...)` 
 
 	data = [
 		{name: "Danbo", age: 25, mood: "feisty"},
@@ -629,7 +629,7 @@ Will return the array objects containing only the given properties.
 ### unselect
 
 Will return the array objects with the given properties removed.  
-**Usage:** unselect(&lt;property>,&lt;property>,...) 
+**Usage:** `unselect(&lt;property>,&lt;property>,...)` 
 
 	data = [
 		{name: "Danbo", age: 25, mood: "feisty"},
@@ -645,7 +645,7 @@ Will return the array objects with the given properties removed.
 ### values
 
 Will return an array of values for a given property.  If multiple properties are given, will return nested arrays of values for each data item.  
-**Usage:** values(&lt;property>,&lt;property>,...)
+**Usage:** `values(&lt;property>,&lt;property>,...)`
 
 	//single property
 	data = [
@@ -673,7 +673,7 @@ Will return an array of values for a given property.  If multiple properties are
 ### limit
 
 Will return a range of the data array.  First parameter is the number of items in the range. Second parameter is zero-based index where the range begins.  
-**Usage:** limit(count,start)
+**Usage:** `limit(count,start)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -694,7 +694,7 @@ The source code and original doc has a third parameter, maxCount. If supplied, i
 ### distinct
 
 Will return a list of unique values from the data array. Works only on simple value types.  Identical objects will be treated as different.  
-**Usage:** distinct()
+**Usage:** `distinct()`
 
 	//against values
 	data = [
@@ -724,7 +724,7 @@ Will return a list of unique values from the data array. Works only on simple va
 ### recurse
 
 Will take any arrays that belong to the given property and insert those array values into the main array.  Will recurse into nested arrays.  
-**Usage:** recurse(&lt;property?>)
+**Usage:** `recurse(&lt;property?>)`
 
 	//property example
 	data = [		
@@ -770,7 +770,7 @@ Will take any arrays that belong to the given property and insert those array va
 ### sum
 
 Returns the sum of the values in the data array. If a property is provided, sums on the value of the property.  Values must be numeric.  
-**Usage:** sum(&lt;property?>)
+**Usage:** `sum(&lt;property?>)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -789,7 +789,7 @@ Returns the sum of the values in the data array. If a property is provided, sums
 ### mean
 
 Causes RQL to get angry.  Just kidding, y'all.  Returns the mean average of the values in the data array. If a property is provided, averages on the value of the property.  Values must be numeric.  
-**Usage:** mean(&lt;property?>)
+**Usage:** `mean(&lt;property?>)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -808,7 +808,7 @@ Causes RQL to get angry.  Just kidding, y'all.  Returns the mean average of the 
 ### max
 
 Returns the maximum of the values in the data array. If a property is provided, returns the maximum value of the property.  Values must be numeric.  
-**Usage:** max(&lt;property?>)
+**Usage:** `max(&lt;property?>)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -827,7 +827,7 @@ Returns the maximum of the values in the data array. If a property is provided, 
 ### min
 
 Returns the minimum of the values in the data array. If a property is provided, returns the minimum value of the property.  Values must be numeric.  
-**Usage:** min(&lt;property?>)
+**Usage:** `min(&lt;property?>)`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -846,7 +846,7 @@ Returns the minimum of the values in the data array. If a property is provided, 
 ### count
 
 Returns the number of values in the data array.  
-**Usage:** count()
+**Usage:** `count()`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -863,7 +863,7 @@ Returns the number of values in the data array.
 ### first
 
 Returns the first value in the data array.  
-**Usage:** first()
+**Usage:** `first()`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -877,7 +877,7 @@ Returns the first value in the data array.
 ### one
 
 Returns the first and only value in the data array. If array has more than one value, an error is thrown.  
-**Usage:** one()
+**Usage:** `one()`
 
 	data = [
 		{name: "Danbo", age: 25},
@@ -894,7 +894,7 @@ Returns the first and only value in the data array. If array has more than one v
 ### aggregate
 
 Returns the result of an aggregation on the dataset. Allows you to group by values, and apply aggregate functions on the data in those groups.  Takes an arbitrary list of properties and aggregate functions. Will return an array of objects for each grouping.  Each object will contain the specific values of the grouping, and the result of the aggregate functions for that grouping.  Function results are stored in properties with integer numbers as names, corresponding to the order the functions were supplied in the query.  
-**Usage:** aggregate(&lt;property|function>,...)
+**Usage:** `aggregate(&lt;property|function>,...)`
 
 	data = [
 		{name: "Danbo", age: 25, salary: 23000, gender: "male"},
@@ -969,9 +969,4 @@ The parameters property is set to an array of values.  These values will be subs
 Licensing
 --------
 
-TODO review by aly
-
 This code was "borrowed" from RQL, which is licensed under the AFL or BSD license as part of the [Persevere](https://github.com/persvr) project.
-
-
-
