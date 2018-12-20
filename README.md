@@ -3,6 +3,19 @@ This is an implementation of Resource Query Language (RQL) that does not use the
 The original project (in AMD form) can be found at [github.com/kriszyp/rql](https://github.com/kriszyp/rql), along with some good documentation. It's some fine stuff, check it out. 
 This [query engine sandbox](http://rql-engine.eu01.aws.af.cm/) is also useful for learning and testing with the original RQL engine.
 
+# Contents
+
+* [Using the Library](#using-the-library)
+* [Limitations](#limitations)
+* [Function List](#function-list)
+* [Examples](#examples)
+  * [General Things](#general-things)
+  * [Functions that Filter](#functions-that-filter)
+  * [Functions that Change the Result Array](#functions-that-change-the-result-array)
+  * [Functions that Aggregate the Result Array](#functions-that-aggregate-the-result-array)
+  * [Array Query Options](#array-query-options)
+* [Licensing](#licensing)
+
 # Using the Library
 
 Add the script to your project.
@@ -42,6 +55,7 @@ Inline chained queries was not tested and is quite possibly broken due to the re
 
 	var fooBetween3And10Query = new RqlQuery().lt("foo",3).gt("foo",10);
 	
+The typical `not` operator appears to have no support in RQL. So, for example, you can't do something like `"not(and(eq(name,Jimbo),gt(age,24)))"`
 
 String-based functional queries are what will be used by the RAMP project, and is recommended to anyone else using this implementaiton.  Of course, fixes to the other formats are always welcome via a pull request.
 
@@ -966,7 +980,6 @@ The parameters property is set to an array of values.  These values will be subs
 	//the contents of result would be [{name: "Danbo", age: 25}, {name: "Jimbo", age: 45}]
 
 
-Licensing
---------
+# Licensing
 
 This code was "borrowed" from RQL, which is licensed under the AFL or BSD license as part of the [Persevere](https://github.com/persvr) project.
